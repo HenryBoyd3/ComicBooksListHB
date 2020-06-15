@@ -1,0 +1,25 @@
+﻿@model MVC_ComicBooksCharacters.Models.ComicBookContext
+@* ran low on time couldn't add the extra credit *@
+@{
+    ViewData["Title"] = "Comics";
+
+}
+comic book character list goes here
+
+@foreach (ComicBook cb in Model.ComicBooks)
+{
+    <div class="container-fluid border-light">
+        <div><h2 class="font-weight-light">Title</h2></div>
+        <div><h4> @cb.ComicBookTitle</h4></div>
+        <div> <img src="@Url.Content(@cb.ComicBookImagePath)" /></div>
+        <small> Discriptions from wikipedia</small>
+        <div>
+            <div class="border-dark"> Discription</div>
+            @cb.ComicBookDiscription
+        </div>
+    </div>
+
+}
+
+
+
